@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Navisow</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!--STYLES-->
+    <!--<link rel="stylesheet" href="/styles/importer.css">-->
+    <!--<link rel="stylesheet" href="/custom/agency/css/agency.min.css">-->
+    <link rel="stylesheet" href="/assets/vendor/angular-ui/build/angular-ui.min.css">
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <!--STYLES END-->
+
+    <!-- THIS IS WHERE THE THEME CSS IS LOADED -->
+    <!--<link rel="stylesheet" href="/themes/<%= typeof theme == 'undefined' ? 'default' : theme %>.css">-->
+</head>
+<body ng-controller="StoreController as store">
+    <p>Get your greeting <a href="/greeting">here</a></p>
+
+    <div ng-repeat="product in store.products">
+        <!--<div ng-hide="product.soldOut">-->
+            <h2>Name: {{product.name}}</h2>
+            <h3>Price: {{product.price | currency}}</h3>
+            <p>Description: {{product.description}}</p>
+            <!--<button ng-show="product.canPurchase">Add to Cart</button>-->
+        <!--</div>-->
+    </div>
+
+    <br>
+
+    <!--SCRIPTS-->
+
+    <!--<script src="/js/dependencies/sails.io.js"></script>-->
+    <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/vendor/angular/angular.min.js"></script>
+    <script src="/assets/vendor/angular-ui/build/angular-ui.min.js"></script>
+    <!--<script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>-->
+    <!--<script src="/js/agency.min.js"></script>-->
+    <!--<script src="/js/contact_me.js"></script>-->
+    <!--<script src="/js/jqBootstrapValidation.js"></script>-->
+
+    <!-- Main App -->
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <!--SCRIPTS END-->
+
+    <!--[if lte IE 8]> <script src="/assets/vendor/angular-ui/build/angular-ui-ieshiv.js"></script> <![endif]-->
+
+</body>
+</html>

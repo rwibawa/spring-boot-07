@@ -54,7 +54,37 @@ public class GreetingController {
 
 ## 4. Run it
 ```bash
-  $ mvn spring-boot:run -Dserver.port=8090
+  $ cd src/main/resources/static/
+  $ bower install
+
+  $ mvn spring-boot:run -Dserver.port=8094
 ```
 
-Open it on the browser [http://localhost:8090](http://localhost:8090)
+Open it on the browser [http://localhost:8094](http://localhost:8094)
+
+## 5. Setup Angular UI
+```bash
+$ cd src/main/resources/static/
+$ npm init
+
+$ mkdir assets
+$ mkdir assets/vendor
+$ mkdir assets/js
+$ mkdir assets/images
+$ mkdir assets/styles
+$ mkdir assets/includes
+
+$ echo '{"directory" : "assets/vendor"}' > .bowerrc
+$ npm install bower --save
+
+$ bower init
+$ bower install bootstrap --save
+$ bower install angular --save
+$ bower install angular-ui --save
+$ bower install font-awesome --save
+```
+
+### 6. Debugging on javascript console
+```javascript
+  > angular.element($0).controller();
+```

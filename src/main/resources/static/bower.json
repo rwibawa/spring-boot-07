@@ -1,0 +1,24 @@
+{
+  "name": "spring-boot-07",
+  "description": "exercise",
+  "main": "app.js",
+  "authors": [
+    "Ryan Wibawa"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rwibawa/spring-boot-07",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.5",
+    "angular-ui": "^0.4.0",
+    "font-awesome": "^4.7.0"
+  }
+}

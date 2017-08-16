@@ -1,0 +1,14 @@
+{
+  "name": "spring-boot-07",
+  "version": "1.0.0",
+  "description": "exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Wibawa",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}

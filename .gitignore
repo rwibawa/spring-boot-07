@@ -22,3 +22,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+# UI
+src/main/resources/static/node_modules
+src/main/resources/static/bower_components
+src/main/resources/static/assets/vendor
+src/main/resources/static/test
+src/main/resources/static/tests
