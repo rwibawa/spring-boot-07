@@ -160,11 +160,11 @@ ID | Description | Sensitive Default
 
 If you are using Spring MVC, the following additional endpoints can also be used:
 
-ID | Description | Sensitive Default
---- | --- | ---
-`docs` | Displays documentation, including example requests and responses, for the Actuator’s endpoints. Requires spring-boot-actuator-docs to be on the classpath. | false
-`heapdump` | Returns a GZip compressed hprof heap dump file. | true
-`jolokia` | Exposes JMX beans over HTTP (when Jolokia is on the classpath). | true
-`logfile` | Returns the contents of the logfile (if logging.file or logging.path properties have been set). Supports the use of the HTTP Range header to retrieve part of the log file’s content. | true
+>! ID | Description | Sensitive Default
+>! --- | --- | ---
+>! `docs` | Displays documentation, including example requests and responses, for the Actuator’s endpoints. Requires spring-boot-actuator-docs to be on the classpath. | false
+>! `heapdump` | Returns a GZip compressed hprof heap dump file. | true
+>! `jolokia` | Exposes JMX beans over HTTP (when Jolokia is on the classpath). | true
+>! `logfile` | Returns the contents of the logfile (if logging.file or logging.path properties have been set). Supports the use of the HTTP Range header to retrieve part of the log file’s content. | true
 
 
