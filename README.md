@@ -86,7 +86,7 @@ $ bower install font-awesome --save
 
 ### 6. Debugging on javascript console
 ```javascript
-  > angular.element($0).controller();
+  angular.element($0).controller();
 ```
 
 ### 7. Add BASIC Authentication
@@ -167,4 +167,12 @@ ID | Description | Sensitive Default
 `jolokia` | Exposes JMX beans over HTTP (when Jolokia is on the classpath). | true
 `logfile` | Returns the contents of the logfile (if logging.file or logging.path properties have been set). Supports the use of the HTTP Range header to retrieve part of the log file’s content. | true
 
+### 9. Account Management (with H2 database)
+Default accounts:
+Username | password | Role
+--- | --- | ---
+admin | admin | ADMIN
+actuator | management | ACTUATOR
+rwibawa | Ch@ng3M3! | USER
 
+> Only user with `ACTUATOR` role can access the web management endpoints.
