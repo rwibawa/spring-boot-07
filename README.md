@@ -92,14 +92,12 @@ $ bower install font-awesome --save
 ### 7. Add BASIC Authentication
 #### Add spring-boot security dependency in the `pom.xml`.
 ```xml
-	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-	</dependencies>
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId>
+	</dependency>
+</dependencies>
 ```
 
 ### Start the spring-boot
@@ -119,14 +117,12 @@ $ curl -u user:5c8ff903-773e-49b7-b225-80ef88664386 http://localhost:8094/greeti
 ### 8. Add web management
 #### Add spring-boot actuator dependency in the `pom.xml`.
 ```xml
-	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-	</dependencies>
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+</dependencies>
 ```
 
 Open it on the browser [http://localhost:8094/health](http://localhost:8094/health).
@@ -168,7 +164,24 @@ ID | Description | Sensitive Default
 `logfile` | Returns the contents of the logfile (if logging.file or logging.path properties have been set). Supports the use of the HTTP Range header to retrieve part of the log file’s content. | true
 
 ### 9. Account Management (with H2 database)
-Default accounts:
+#### Add spring-boot security dependency in the `pom.xml`.
+```xml
+<dependencies>
+	<!-- Database -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<scope>runtime</scope>
+	</dependency>
+</dependencies>
+```
+
+#### Default accounts:
 Username | password | Role
 --- | --- | ---
 admin | admin | ADMIN
