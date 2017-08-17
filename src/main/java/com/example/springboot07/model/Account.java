@@ -9,18 +9,39 @@
 
 package com.example.springboot07.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Account {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private String id;
+
+    @NonNull
     private String username;
+
+    @NonNull
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @NonNull
+    private Role role;
 }
