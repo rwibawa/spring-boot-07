@@ -1,0 +1,23 @@
+server:
+  port: 8094
+
+management:
+  port: 8194
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+
+#flyway:
+#  baseline-on-migrate: true
+#  locations: local/db
+
+#Application specific props
+#sds:
+#  h2:
+#    webPort: ${SDS_H2_WEBPORT:17004}
+#    tcpPort: ${SDS_H2_TCPPORT:17005}

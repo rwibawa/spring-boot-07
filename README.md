@@ -188,4 +188,25 @@ admin | admin | ADMIN
 actuator | management | ACTUATOR
 rwibawa | Ch@ng3M3! | USER
 
+> Open the [H2 Console](http://localhost:8080/h2-console). The DB is `jdbc:h2:mem:testdb`.
+
 > Only user with `ACTUATOR` role can access the web management endpoints.
+
+### 10. Setup _flyway_ for database migration.
+#### Add `flyway-core` dependency in the `pom.xml`.
+```xml
+<dependencies>
+	<dependency>
+		<groupId>org.flywaydb</groupId>
+		<artifactId>flyway-core</artifactId>
+        <scope>provided</scope>
+	</dependency>
+</dependencies>
+```
+
+#### The migration scripts default location is in `db/migration`.
+```bash
+$ cd src/main/resources/
+$ mkdir db
+$ mkdir db/migration
+```
