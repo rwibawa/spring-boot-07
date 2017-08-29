@@ -7,23 +7,21 @@
  * agreement/contract under which the software has been supplied.               *
  ********************************************************************************/
 
-package com.example.springboot07;
+package com.example.springboot07.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.security.Principal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
-
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-            String.format(template, name));
+public class UserController {
+    @RequestMapping({ "/user", "/me" })
+    public Map<String, String> user(Principal principal) {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("name", principal.getName());
+        return map;
     }
 }

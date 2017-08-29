@@ -21,3 +21,12 @@ spring:
 #  h2:
 #    webPort: ${SDS_H2_WEBPORT:17004}
 #    tcpPort: ${SDS_H2_TCPPORT:17005}
+
+# OAuth2 Server
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      scope: read,write
+      auto-approve-scopes: '.*'
