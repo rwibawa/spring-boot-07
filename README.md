@@ -210,3 +210,37 @@ $ cd src/main/resources/
 $ mkdir db
 $ mkdir db/migration
 ```
+
+### 11. Authentication Server
+[Spring oauth2 server tutorial](https://spring.io/guides/tutorials/spring-boot-oauth2/#_social_login_authserver).
+[https://github.com/spring-guides/tut-spring-boot-oauth2.git](https://github.com/spring-guides/tut-spring-boot-oauth2.git).
+
+#### Get token as oauth client
+```bash
+curl -X POST \
+  http://acme:acmesecret@localhost:8094/oauth/token \
+  -d grant_type=client_credentials
+```
+
+#### Get token as a user
+```bash
+curl -X POST \
+  http://acme:acmesecret@localhost:8094/oauth/token \
+  -d grant_type=password
+  -d username=rwibawa
+  -d password=Ch%40ng3M3!
+```
+
+#### Get user info
+```bash
+curl -X GET \
+  http://localhost:8094/me \
+  -H 'authorization: bearer <token>'
+```
+
+#### Get the greeting
+```bash
+curl -X GET \
+  http://localhost:8094/greeting \
+  -H 'authorization: bearer <token>'
+```
