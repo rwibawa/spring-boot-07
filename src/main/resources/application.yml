@@ -5,6 +5,8 @@ management:
   port: 8194
 
 spring:
+  application:
+    name: SPRING_BOOT_07
   jpa:
     hibernate:
       ddl-auto: none

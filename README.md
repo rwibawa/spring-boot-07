@@ -55,9 +55,13 @@ public class GreetingController {
 ## 4. Run it
 ```bash
   $ cd src/main/resources/static/
+  $ npm install
   $ bower install
 
   $ mvn spring-boot:run -Dserver.port=8094
+  
+  # use property file application-local-pg.yml
+  $ mvn spring-boot:run -Dspring.profiles.active=local-pg
 ```
 
 Open it on the browser [http://localhost:8094](http://localhost:8094)
@@ -192,6 +196,17 @@ rwibawa | Ch@ng3M3! | USER
 
 > Only user with `ACTUATOR` role can access the web management endpoints.
 
+##### Get `health`
+> Basic Auth
+> username: actuator
+> password: management
+
+```bash
+curl -X GET \
+  http://localhost:8194/health \
+  -H 'authorization: Basic YWN0dWF0b3I6bWFuYWdlbWVudA=='
+```
+  
 ### 10. Setup _flyway_ for database migration.
 #### Add `flyway-core` dependency in the `pom.xml`.
 ```xml
