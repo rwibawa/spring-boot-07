@@ -259,3 +259,45 @@ curl -X GET \
   http://localhost:8094/greeting \
   -H 'authorization: bearer <token>'
 ```
+
+### 12. Deploy to Heroku
+[Getting Started on Heroku with Java](https://devcenter.heroku.com/articles/getting-started-with-java#introduction)
+
+#### Add `Procfile`
+```
+web:    java -Dspring.profiles.active=heroku-pg -jar target/spring-boot-07-0.0.1-SNAPSHOT.jar
+```
+
+### Create property file `src/main/resources/application-heroku-pg.yml`
+Get Postgres env. var `JDBC_DATABASE_URL` for db connection string.
+```yml
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    generate-ddl: false
+  datasource:
+    platform: postgres
+    url: ${JDBC_DATABASE_URL:}
+    driverClassName: org.postgresql.Driver
+
+flyway:
+  baseline-on-migrate: false
+  locations: db/local
+```
+
+#### Deploy the app
+```bash
+$ heroku create
+$ git add .
+$ git commit -m "Heroku configuration."
+$ git push heroku master
+
+$ heroku ps:scale web=1
+$ heroku open
+$ heroku logs
+
+$ heroku addons
+$ heroku config
+$ heroku pg
+```

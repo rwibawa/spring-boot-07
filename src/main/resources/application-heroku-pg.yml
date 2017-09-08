@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    generate-ddl: false
+#    hibernate:
+#      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: ${JDBC_DATABASE_URL:}
+    driverClassName: org.postgresql.Driver
+
+flyway:
+  baseline-on-migrate: false
+  locations: db/local
