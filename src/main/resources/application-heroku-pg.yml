@@ -1,3 +1,9 @@
+server:
+  port: ${PORT:8094}
+
+management:
+  port: ${PORT:8194}
+
 spring:
   jpa:
     database: POSTGRESQL
